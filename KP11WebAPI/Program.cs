@@ -22,17 +22,11 @@ foreach (IAPI api in apis)
     api.Register(app);
 }
 
-
-//new ManualAPI().Register(app);
-//new AuthAPI().Register(app);
-
 app.Run();
 
 void RegisterServices(IServiceCollection services)
 {
-    services.AddControllersWithViews();
     services.AddEndpointsApiExplorer();
-    //services.AddSwaggerGen();
     services.AddSwaggerGen(options =>
     {
         options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -98,10 +92,6 @@ void Configure(WebApplication app)
         ManualDb db = scope.ServiceProvider.GetRequiredService<ManualDb>();
         db.Database.EnsureCreated();
     }
-    
-    app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}");
+
     app.UseHttpsRedirection();
-    
 }

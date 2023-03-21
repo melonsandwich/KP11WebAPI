@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP11WebAPI", "KP11WebAPI\KP11WebAPI.csproj", "{77B72C37-183E-4FBB-881E-9AC39273C3C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP11.Integration", "KP11.Integration\KP11.Integration.csproj", "{C7C18CE0-BD78-4A32-AB8E-C3D7823F4952}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{83DA139A-B1D5-4244-A5FE-AAD907799904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP11.WPFApplication", "KP11.WPFApplication\KP11.WPFApplication.csproj", "{D25DE027-62B8-420A-A458-965B2FD861CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,16 @@ Global
 		{77B72C37-183E-4FBB-881E-9AC39273C3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77B72C37-183E-4FBB-881E-9AC39273C3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77B72C37-183E-4FBB-881E-9AC39273C3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C18CE0-BD78-4A32-AB8E-C3D7823F4952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C18CE0-BD78-4A32-AB8E-C3D7823F4952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C18CE0-BD78-4A32-AB8E-C3D7823F4952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C18CE0-BD78-4A32-AB8E-C3D7823F4952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25DE027-62B8-420A-A458-965B2FD861CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25DE027-62B8-420A-A458-965B2FD861CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25DE027-62B8-420A-A458-965B2FD861CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25DE027-62B8-420A-A458-965B2FD861CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D25DE027-62B8-420A-A458-965B2FD861CF} = {83DA139A-B1D5-4244-A5FE-AAD907799904}
 	EndGlobalSection
 EndGlobal
