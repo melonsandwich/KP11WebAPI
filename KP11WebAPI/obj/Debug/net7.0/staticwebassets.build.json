@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GrQQzIWSGqyPybTu+KD/GXVTu7BLO6+yuTk4RtoFM9A=",
+  "Source": "KP11WebAPI",
+  "BasePath": "_content/KP11WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
