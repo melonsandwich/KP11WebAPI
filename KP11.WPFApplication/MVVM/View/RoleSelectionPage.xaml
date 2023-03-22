@@ -1,0 +1,79 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.RoleSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KP11.WPFApplication.MVVM.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="RoleSelectionPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Чтобы продолжить, укажите," 
+                   Style="{StaticResource LabelTitle}"/>
+            <Label Content="кем вы являетесь"
+                   HorizontalAlignment="Center"
+                   Style="{StaticResource LabelTitle}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1"
+              Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Rectangle Fill="Black"
+                       Grid.ColumnSpan="3"
+                       Grid.RowSpan="2"
+                       Opacity="0.05"/>
+
+            <Button Name="ButtonStudent"
+                    Content="Студент"
+                    Grid.Column="0"
+                    Height="35"
+                    Width="150"
+                    HorizontalAlignment="Right"
+                    FontFamily="{StaticResource Manrope}"
+                    FontSize="20"
+                    FontWeight="Regular"/>
+
+            <Image Name="ImageSelection"
+                   Grid.Column="1"
+                   Height="200"
+                   Width="200"/>
+
+            <Button Name="ButtonProfessor"
+                    Content="Учитель"
+                    Grid.Column="2"
+                    Height="35"
+                    Width="150"
+                    HorizontalAlignment="Left"
+                    FontFamily="{StaticResource Manrope}"
+                    FontSize="22"
+                    FontWeight="Regular"/>
+
+            <Button Name="ButtonProceed"
+                    FontFamily="{StaticResource Manrope}"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    Content="Продолжить"
+                    FontSize="22"
+                    FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Page>

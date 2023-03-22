@@ -1,4 +1,4 @@
-﻿using KP11WebAPI.Models;
+﻿using KP11.Integration.Models;
 
 namespace KP11WebAPI;
 
@@ -8,4 +8,8 @@ public class ManualDb : DbContext
     {}
 
     public DbSet<Manual> Manuals => Set<Manual>();
+    
+    public DbSet<Subject> Subjects => Set<Subject>();
+
+    public DbSet<Professor> Professors => Set<Professor>();
 }

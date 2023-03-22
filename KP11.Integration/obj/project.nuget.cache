@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "l7nLWnSqWSq4E2mNrnBW0vRDyvMSi2N/SJCUM5WXc0LdvDjnkl1t+y9prIYBO5gIFFUAt8NXvJz3hZq3iVYRSw==",
+  "dgSpecHash": "+DjOMc8erpqC7Z5baX/G9pQeIOI0HyeGRpTsJUUCbPRLedihPZhomPsdxRhjrt215lbyVZ47D0fIxmr4i6K5YA==",
   "success": true,
   "projectFilePath": "C:\\Users\\arbuz\\RiderProjects\\KP11WebAPI\\KP11.Integration\\KP11.Integration.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\arbuz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

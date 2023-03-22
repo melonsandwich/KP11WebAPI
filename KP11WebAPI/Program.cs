@@ -1,9 +1,9 @@
 using System.Text;
 using FluentValidation.AspNetCore;
+using KP11.Integration.Models;
 using KP11WebAPI;
 using KP11WebAPI.APIs;
 using KP11WebAPI.Auth;
-using KP11WebAPI.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -29,6 +29,7 @@ void RegisterServices(IServiceCollection services)
     services.AddEndpointsApiExplorer();
     services.AddSwaggerGen(options =>
     {
+        options.ResolveConflictingActions(api => api.First());
         options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
         {
             Description = "JWT Authorization header using the bearer scheme",
@@ -57,11 +58,13 @@ void RegisterServices(IServiceCollection services)
         options.UseSqlite(builder.Configuration.GetConnectionString("Sqlite"));
     });
     services.AddScoped<IManualRepository, ManualRepository>();
+    services.AddScoped<ISubjectRepository, SubjectRepository>();
+    services.AddScoped<IProfessorRepository, ProfessorRepository>();
+    
     services.AddSingleton<ITokenService>(new TokenService());
     services.AddSingleton<IUserRepository>(new UserRepository());
     services.AddAuthorization();
-    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
         {
             options.TokenValidationParameters = new()
             {
@@ -77,6 +80,8 @@ void RegisterServices(IServiceCollection services)
     
     services.AddTransient<IAPI, AuthAPI>();
     services.AddTransient<IAPI, ManualAPI>();
+    services.AddTransient<IAPI, SubjectAPI>();
+    services.AddTransient<IAPI, ProfessorAPI>();
 }
 
 void Configure(WebApplication app)
@@ -89,8 +94,8 @@ void Configure(WebApplication app)
         app.UseSwagger();
         app.UseSwaggerUI();
         using var scope = app.Services.CreateScope();
-        ManualDb db = scope.ServiceProvider.GetRequiredService<ManualDb>();
-        db.Database.EnsureCreated();
+        ManualDb manualDb = scope.ServiceProvider.GetRequiredService<ManualDb>();
+        manualDb.Database.EnsureCreated();
     }
 
     app.UseHttpsRedirection();

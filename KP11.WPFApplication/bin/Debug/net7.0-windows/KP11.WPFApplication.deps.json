@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "KP11.WPFApplication/1.0.0": {
+        "dependencies": {
+          "KP11.Integration": "1.0.0"
+        },
+        "runtime": {
+          "KP11.WPFApplication.dll": {}
+        }
+      },
+      "KP11.Integration/1.0.0": {
+        "runtime": {
+          "KP11.Integration.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "KP11.WPFApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "KP11.Integration/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

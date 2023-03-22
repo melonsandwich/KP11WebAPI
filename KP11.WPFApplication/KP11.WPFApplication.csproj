@@ -11,4 +11,14 @@
       <ProjectReference Include="..\KP11.Integration\KP11.Integration.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Media\Font\Manrope\" />
+      <Folder Include="MVVM\Model" />
+      <Folder Include="MVVM\ViewModel" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    </ItemGroup>
+
 </Project>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5Jk2vUsN4pJodW4N6J/YjYtBVz3ihXoPfPYwO385/yMb9iX7ito14NkD5G/+xX/RisxsEQE7YiS0QATOE4EtFg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\arbuz\\RiderProjects\\KP11WebAPI\\KP11.ConsoleApp\\KP11.ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arbuz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

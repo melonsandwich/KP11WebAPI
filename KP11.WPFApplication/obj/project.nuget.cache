@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "sbLdaDSALcRDXwbLmQ/ZMrfgyNXocG+qCn81h95cu9p3/7VgdqOLCZ0HhYY/ZT0gEF4U5GYNYLCsMO+PGUUd4Q==",
+  "dgSpecHash": "8ohLFr8UQPOsTPBs7YvcP4hibBN85/LioJ8mx+zIWGNzGbzbKhOM2hjhpwqmk9zdbqfJDZuIzrGhTLH8JD+gUQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\arbuz\\RiderProjects\\KP11WebAPI\\KP11.WPFApplication\\KP11.WPFApplication.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\arbuz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

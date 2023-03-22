@@ -1,4 +1,4 @@
-﻿using KP11WebAPI.Models;
+﻿using KP11.Integration.Models;
 
 namespace KP11WebAPI.Auth;
 

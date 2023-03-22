@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{83
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP11.WPFApplication", "KP11.WPFApplication\KP11.WPFApplication.csproj", "{D25DE027-62B8-420A-A458-965B2FD861CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP11.ConsoleApp", "KP11.ConsoleApp\KP11.ConsoleApp.csproj", "{2C6B5807-7588-4BAF-894F-48E79A5BD8F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,8 +28,13 @@ Global
 		{D25DE027-62B8-420A-A458-965B2FD861CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25DE027-62B8-420A-A458-965B2FD861CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25DE027-62B8-420A-A458-965B2FD861CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6B5807-7588-4BAF-894F-48E79A5BD8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6B5807-7588-4BAF-894F-48E79A5BD8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6B5807-7588-4BAF-894F-48E79A5BD8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6B5807-7588-4BAF-894F-48E79A5BD8F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D25DE027-62B8-420A-A458-965B2FD861CF} = {83DA139A-B1D5-4244-A5FE-AAD907799904}
+		{2C6B5807-7588-4BAF-894F-48E79A5BD8F0} = {83DA139A-B1D5-4244-A5FE-AAD907799904}
 	EndGlobalSection
 EndGlobal

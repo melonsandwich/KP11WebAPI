@@ -4,6 +4,19 @@
              xmlns:local="clr-namespace:KP11.WPFApplication"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!-- FONTS -->
+        <FontFamily x:Key="Manrope">/Media/Font/Manrope/#Manrope</FontFamily>
+        
+        <Style x:Key="LabelTitle" TargetType="Label">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
+        </Style>
+
+        <Style x:Key="LabelText" TargetType="Label">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
+        </Style>
     </Application.Resources>
 </Application>

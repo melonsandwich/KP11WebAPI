@@ -1,5 +1,5 @@
-﻿using KP11WebAPI.Auth;
-using KP11WebAPI.Models;
+﻿using KP11.Integration.Models;
+using KP11WebAPI.Auth;
 using Microsoft.AspNetCore.Authorization;
 
 namespace KP11WebAPI.APIs;

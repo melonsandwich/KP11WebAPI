@@ -1,0 +1,58 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:KP11.WPFApplication.MVVM.View"
+      mc:Ignorable="d"
+      Title="MainPage" Height="600" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Электронная библиотека" 
+                   Style="{StaticResource LabelTitle}"/>
+            <Label Content="ЦИКТ КП №11"
+                   HorizontalAlignment="Center"
+                   Style="{StaticResource LabelTitle}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1"
+              Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Rectangle Fill="Black" Grid.RowSpan="3" Opacity="0.05"/>
+            <Label Content="О приложении"
+                   Style="{StaticResource LabelTitle}"
+                   FontSize="22"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+            <TextBlock Name="TextBlockAppInfo"
+                       Grid.Row="1"
+                       FontFamily="{StaticResource Manrope}"
+                       FontWeight="Regular"
+                       FontSize="20"
+                       TextAlignment="Center"
+                       Margin="10,0,10,0"
+                       TextWrapping="Wrap"
+                       Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel tincidunt est. Nunc et lorem quis diam rhoncus faucibus. Proin et ligula eget felis malesuada auctor. Nam ornare sem in posuere suscipit. Suspendisse viverra est tellus, ac semper ex maximus vel. Aliquam sit amet consequat arcu. Nunc eleifend turpis sagittis ipsum hendrerit faucibus. Praesent at orci vel sem blandit malesuada bibendum vel dui. Nulla sit amet dapibus purus. Aenean fermentum, dolor non maximus fermentum, odio nisi tincidunt tellus, et pulvinar massa ligula sed odio. Donec suscipit, mi in blandit ultrices, libero dolor pellentesque tortor, in pellentesque augue enim eget nisl. Integer sed dolor nec elit rhoncus volutpat quis at felis. Duis in nisi dui."
+                       HorizontalAlignment="Center"/>
+
+            <Button Name="ButtonProceed"
+                    FontFamily="{StaticResource Manrope}"
+                    Grid.Row="2"
+                    Content="Продолжить"
+                    FontSize="22"
+                    FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Page>

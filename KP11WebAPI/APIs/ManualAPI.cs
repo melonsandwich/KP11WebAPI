@@ -1,5 +1,4 @@
-﻿using KP11WebAPI.Auth;
-using KP11WebAPI.Models;
+﻿using KP11.Integration.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace KP11WebAPI.APIs;
@@ -8,54 +7,68 @@ public class ManualAPI : IAPI
 {
     public void Register(WebApplication app)
     {
-        app.MapGet("/manuals", GetAll)
+        app.MapGet("/manuals/get-all", GetAllManuals)
             .Produces<List<Manual>>()
             .WithName("GetAllManuals")
             .WithTags("GET");
 
-        app.MapGet("/manuals/search/name/{query}", Search)
+        app.MapGet("/manuals/search/name/{query}", SearchManuals)
             .Produces<List<Manual>>()
             .Produces(StatusCodes.Status404NotFound)
             .WithName("SearchManuals")
             .WithTags("GET");
 
-        app.MapGet("/manuals/{id:int}", GetByID)
+        app.MapGet("/manuals/get/{id:int}", GetManualByID)
             .Produces<Manual>()
             .WithName("GetManual")
             .WithTags("GET");
+        
+        app.MapGet("/manuals/subject/{subjectID:int}", GetAllManualsOfSubject)
+            .Produces<List<Manual>>()
+            .Produces(StatusCodes.Status404NotFound)
+            .WithName("GetAllManualsOfSubject")
+            .WithTags("GET");
 
-        app.MapPost("/manuals", Add)
+        app.MapPost("/manuals/add", AddManual)
             .Accepts<Manual>("application/json")
             .Produces<Manual>(StatusCodes.Status201Created)
             .WithName("CreateManual")
             .WithName("POST");
 
-        app.MapPut("/manuals", Update)
+        app.MapPut("/manuals/update", UpdateManual)
             .Accepts<Manual>("application/json")
             .WithName("UpdateManual")
             .WithName("PUT");
 
-        app.MapDelete("manuals/{id:int}", Delete)
+        app.MapDelete("/manuals/delete/{id:int}", DeleteManual)
             .WithName("DeleteManual")
             .WithTags("DELETE");
     }
 
     [AllowAnonymous]
-    private static async Task<IResult> GetAll(IManualRepository repository)
+    private static async Task<IResult> GetAllManuals(IManualRepository repository)
     {
         return Results.Ok(await repository.GetManualsAsync());
     }
     
-    [Authorize]
-    private static async Task<IResult> Search(string query, IManualRepository repository)
+    [AllowAnonymous]
+    private static async Task<IResult> GetAllManualsOfSubject(int subjectID, IManualRepository repository)
+    {
+        return await repository.GetAllManualsOfSubject(subjectID) is IEnumerable<Manual> manuals
+            ? Results.Ok(manuals)
+            : Results.NotFound(Array.Empty<Manual>());
+    }
+    
+    [AllowAnonymous]
+    private static async Task<IResult> SearchManuals(string query, IManualRepository repository)
     {
         return await repository.GetManualsAsync(query) is IEnumerable<Manual> manuals
             ? Results.Ok(manuals)
             : Results.NotFound(Array.Empty<Manual>());
     }
     
-    [Authorize]
-    private static async Task<IResult> GetByID(int id, IManualRepository repository)
+    [AllowAnonymous]
+    private static async Task<IResult> GetManualByID(int id, IManualRepository repository)
     {
         return await repository.GetManualAsync(id) is { } manual
             ? Results.Ok(manual)
@@ -63,7 +76,7 @@ public class ManualAPI : IAPI
     }
     
     [Authorize]
-    private static async Task<IResult> Add([FromBody] Manual manual, IManualRepository repository)
+    private static async Task<IResult> AddManual([FromBody] Manual manual, IManualRepository repository)
     {
         await repository.AddManualAsync(manual);
         await repository.SaveAsync();
@@ -71,7 +84,7 @@ public class ManualAPI : IAPI
     }
     
     [Authorize]
-    private static async Task<IResult> Update([FromBody] Manual manual, IManualRepository repository)
+    private static async Task<IResult> UpdateManual([FromBody] Manual manual, IManualRepository repository)
     {
         await repository.UpdateManualAsync(manual);
         await repository.SaveAsync();
@@ -79,7 +92,7 @@ public class ManualAPI : IAPI
     }
     
     [Authorize]
-    private static async Task<IResult> Delete(int id, IManualRepository repository)
+    private static async Task<IResult> DeleteManual(int id, IManualRepository repository)
     {
         await repository.DeleteManualAsync(id);
         await repository.SaveAsync();
