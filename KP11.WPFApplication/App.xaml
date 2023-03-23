@@ -5,7 +5,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <!-- FONTS -->
-        <FontFamily x:Key="Manrope">/Media/Font/Manrope/#Manrope</FontFamily>
+        <FontFamily x:Key="Manrope">pack://application:,,,/Media/Font/Manrope/#Manrope</FontFamily>
         
         <Style x:Key="LabelTitle" TargetType="Label">
             <Setter Property="FontSize" Value="35"/>

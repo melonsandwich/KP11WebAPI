@@ -48,6 +48,7 @@
                        HorizontalAlignment="Center"/>
 
             <Button Name="ButtonProceed"
+                    Click="ButtonProceed_Click"
                     FontFamily="{StaticResource Manrope}"
                     Grid.Row="2"
                     Content="Продолжить"

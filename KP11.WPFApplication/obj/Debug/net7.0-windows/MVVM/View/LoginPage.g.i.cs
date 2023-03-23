@@ -77,7 +77,7 @@ namespace KP11.WPFApplication.MVVM.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/KP11.WPFApplication;V1.0.0.0;component/mvvm/view/loginpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/KP11.WPFApplication;component/mvvm/view/loginpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\View\LoginPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

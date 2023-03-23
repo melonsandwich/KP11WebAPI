@@ -22,182 +22,153 @@
 
         </StackPanel>
 
+        <Button Name="ButtonEditProfessors"
+                Content="Панель управления"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Width="120"
+                Margin="15"
+                Padding="5"
+                Tag="admin"/>
+
+        <Button Name="ButtonBack"
+                Content="Назад"
+                Click="ButtonBack_Click"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="120"
+                Margin="15"
+                Padding="5"/>
+
         <Grid Grid.Row="1" 
               Margin="35">
             <Rectangle Fill="Black" Opacity="0.05"/>
             <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <StackPanel Orientation="Vertical">
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Жмышенко Валерий Альбертович"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Занимаемые должности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="Преподаватель английского языка"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Оконченное учебное заведение"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="МБОУ Школа №69"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Направления подготовки и (или) специальности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="Пилот гражданской авиации"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Общий стаж работы"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="78"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Стаж работы по специальности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="1"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="E-mail"
-                                               FontSize="15"/>
-                                        <TextBlock FontSize="15"
-                                                   FontWeight="Regular"
-                                                   FontFamily="{StaticResource Manrope}"
-                                                   VerticalAlignment="Center">
-                                            <Hyperlink Foreground="#8a85c7">
-                                                gladvalakas@mail.ru
-                                            </Hyperlink>
-                                        </TextBlock>
-                                    </StackPanel>
-                                </StackPanel>
-                                <Image Source="../../Media/Image/unnamed.jpg"
-                                       Width="200"
-                                       Height="200"
-                                       Stretch="Fill"
-                                       HorizontalAlignment="Right"
-                                       DockPanel.Dock="Right"/>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Бэйл Кристиан Филиппович"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Занимаемые должности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="Преподаватель предпринимательства, заведующий учебным заведением"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Оконченное учебное заведение"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="ГАПОУ Колледж предпринимательства №11"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Направления подготовки и (или) специальности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="Предприниматель"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Общий стаж работы"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="24"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Стаж работы по специальности"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="1"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="E-mail"
-                                               FontSize="15"/>
-                                        <TextBlock FontSize="15"
-                                                   FontWeight="Regular"
-                                                   FontFamily="{StaticResource Manrope}"
-                                                   VerticalAlignment="Center">
-                                            <Hyperlink Foreground="#8a85c7">
-                                                gladvalakas@mail.ru
-                                            </Hyperlink>
-                                        </TextBlock>
-                                    </StackPanel>
-                                </StackPanel>
-                                <Image Source="../../Media/Image/bale.png"
-                                       Width="200"
-                                       Height="200"
-                                       Stretch="Fill"
-                                       HorizontalAlignment="Right"
-                                       DockPanel.Dock="Right"/>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                </StackPanel>
+                <ItemsControl ItemsSource="{Binding Professors}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Margin="5"
+                                    HorizontalContentAlignment="Stretch"
+                                    Name="ButtonProfessor"
+                                    Click="ButtonProfessor_Click">
+                                <Grid>
+                                    <TextBlock FontSize="10"
+                                               VerticalAlignment="Top"
+                                               HorizontalAlignment="Right">
+                                        <Run Text="ID: "/>
+                                        <Run Text="{Binding ID}"/>
+                                    </TextBlock>
+                                    <DockPanel>
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    HorizontalAlignment="Left">
+                                            <Label Style="{StaticResource LabelTitle}"
+                                                   Content="{Binding Name}"
+                                                   FontSize="20"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Занимаемые должности"
+                                                       FontSize="15"/>
+                                                <TextBlock Text="{Binding Occupation}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Оконченное учебное заведение"
+                                                       FontSize="15"/>
+                                                <TextBlock Text="{Binding AlmaMater}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Направления подготовки и (или) специальности"
+                                                       FontSize="15"/>
+                                                <TextBlock Text="{Binding Speciality}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Общий стаж работы"
+                                                       FontSize="15"/>
+                                                <TextBlock Text="{Binding WorkExperience}"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Стаж работы по специальности"
+                                                       FontSize="15"/>
+                                                <TextBlock Text="{Binding SpecialWorkExperience}"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="E-mail"
+                                                       FontSize="15"/>
+                                                <TextBlock FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center">
+                                                    <Hyperlink Foreground="#8a85c7"
+                                                               Name="HyperlinkEmail"
+                                                               Click="HyperlinkEmail_Click">
+                                                        <Run Text="{Binding Email}"/>
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Телефон"
+                                                       FontSize="15"/>
+                                                <TextBlock FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center">
+                                                    <Hyperlink Name="HyperlinkPhone" 
+                                                               Foreground="#8a85c7"
+                                                               Click="HyperlinkPhone_Click">
+                                                        <Run Text="{Binding Phone}"/>
+                                                    </Hyperlink>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <Image Source="{Binding ImageURL}"
+                                               Width="200"
+                                               Height="200"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Right"
+                                               DockPanel.Dock="Right"/>
+                                    </DockPanel>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </ScrollViewer>
         </Grid>
     </Grid>

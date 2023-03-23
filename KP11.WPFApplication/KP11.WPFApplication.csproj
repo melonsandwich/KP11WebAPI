@@ -8,17 +8,56 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Media\Font\Manrope\Manrope-Bold.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-ExtraBold.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-ExtraLight.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-Light.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-Medium.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-Regular.ttf" />
+      <None Remove="Media\Font\Manrope\Manrope-SemiBold.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <COMReference Include="{215d64d2-031c-33c7-96e3-61794cd1ee61}">
+        <WrapperTool>tlbimp</WrapperTool>
+        <VersionMinor>4</VersionMinor>
+        <VersionMajor>2</VersionMajor>
+        <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
+      </COMReference>
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\KP11.Integration\KP11.Integration.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Media\Font\Manrope\" />
-      <Folder Include="MVVM\Model" />
-      <Folder Include="MVVM\ViewModel" />
+      <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <Resource Include="Media\Font\Manrope\Manrope-Bold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-ExtraBold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-ExtraLight.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-Light.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-Medium.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-Regular.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Font\Manrope\Manrope-SemiBold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

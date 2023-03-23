@@ -26,6 +26,14 @@ public class SubjectRepository : ISubjectRepository, IDisposable
         return (await _context.Subjects.FindAsync(subjectID))!;
     }
 
+    public async Task<SubjectManualAmountResponse> GetSubjectsManualAmount(int subjectID)
+    {
+        return new SubjectManualAmountResponse
+        {
+            Amount = await _context.Manuals.Where(m => m.SubjectID == subjectID).CountAsync()
+        };
+    }
+
     public async Task AddSubjectAsync(Subject subject)
     {
         await _context.Subjects.AddAsync(subject);

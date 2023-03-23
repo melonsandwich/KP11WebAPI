@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KP11.WPFApplication.MVVM.View
 {
@@ -20,9 +9,43 @@ namespace KP11.WPFApplication.MVVM.View
     /// </summary>
     public partial class RoleSelectionPage : Page
     {
+        private bool? isProfessorSelected = null;
+        private event Action _selectionChanged;
+
         public RoleSelectionPage()
         {
             InitializeComponent();
+            _selectionChanged += () =>
+            {
+                LabelRole.Content = (isProfessorSelected != null && isProfessorSelected.Value) ? "Преподаватель" : "Студент";
+                ButtonProceed.IsEnabled = true;
+            };
+        }
+
+        private void ButtonProceed_Click(object sender, RoutedEventArgs e)
+        {
+            if (isProfessorSelected == null) return;
+
+            if (isProfessorSelected!.Value)
+            {
+                AppFields.MainWindow.Content = new LoginPage();
+            }
+            else
+            {
+                AppFields.MainWindow.Content = new ProfessorSelection(false);
+            }
+        }
+
+        private void ButtonStudent_Click(object sender, RoutedEventArgs e)
+        {
+            isProfessorSelected = false;
+            _selectionChanged?.Invoke();
+        }
+
+        private void ButtonProfessor_Click(object sender, RoutedEventArgs e)
+        {
+            isProfessorSelected = true;
+            _selectionChanged?.Invoke();
         }
     }
 }

@@ -14,13 +14,29 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
+        <Frame Name="FrameSingleManual"
+               Grid.RowSpan="2"
+               NavigationUIVisibility="Hidden"
+               Panel.ZIndex="50"/>
+        
+        <Button Name="ButtonBack"
+                Content="Назад"
+                Click="ButtonBack_Click"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="120"
+                Margin="15"
+                Padding="5"/>
+        
         <StackPanel Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Label Content="Жмышенко Валерий Альбертович" 
+            <Label Name="LabelProfessor"
+                   Content="Жмышенко Валерий Альбертович" 
                    Style="{StaticResource LabelTitle}"/>
 
-            <Label Content="Разговоры о важном"
+            <Label Name="LabelSubject"
+                   Content="Разговоры о важном"
                    HorizontalAlignment="Center"
                    FontWeight="DemiBold"
                    FontSize="25"
@@ -38,80 +54,38 @@
             <Rectangle Fill="Black" Opacity="0.05"/>
             <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
-                <StackPanel Orientation="Vertical">
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Аркадий Бебронюхов. «Б'ябный в 4:54 ночи. Значение религии в современном мире.»"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Дата создания"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="31 февраля 2023 г. 14:00"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Роберт Кентаврский. «Вселенская голова и значение Демонических эссенций»"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Дата создания"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="1 марта 2021 г. 4:20"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Роберт Кентаврский. «Влияние персоны Владимира Горского на музыкальное искусство»"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Дата создания"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="31 февраля 2023 г. 15:00"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                </StackPanel>
+                <ItemsControl ItemsSource="{Binding Manuals}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Name="ButtonManual"
+                                    Click="ButtonManual_Click"
+                                    Margin="5"
+                                    HorizontalContentAlignment="Stretch">
+                                <Grid>
+                                    <DockPanel>
+                                        <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    HorizontalAlignment="Left">
+                                            <Label Style="{StaticResource LabelTitle}"
+                                                   Content="{Binding Name}"
+                                                   FontSize="20"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Дата создания"
+                                                       FontSize="15"/>
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       Content="{Binding DateCreated, StringFormat='{}{0:d MMMM yyyy H:mm}', ConverterCulture=ru-RU}"
+                                                       FontSize="15"
+                                                       FontWeight="Regular"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </ScrollViewer>
         </Grid>
     </Grid>

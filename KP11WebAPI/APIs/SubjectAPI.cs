@@ -18,6 +18,11 @@ public class SubjectAPI : IAPI
             .WithName("GetAllSubjectsOfProfessor")
             .WithTags("GET");
 
+        app.MapGet("/subjects/{id:int}/manual-amount", GetSubjectsManualAmount)
+            .Produces<SubjectManualAmountResponse>()
+            .WithName("GetSubjectsManualAmount")
+            .WithTags("GET");
+
         app.MapGet("/subjects/get/{id:int}", GetSubjectByID)
             .Produces<Subject>()
             .WithName("GetSubject")
@@ -46,6 +51,12 @@ public class SubjectAPI : IAPI
         return await repository.GetAllSubjectsOfProfessor(professorID) is IEnumerable<Subject> subjects
             ? Results.Ok(subjects)
             : Results.NotFound(Array.Empty<Manual>());
+    }
+    
+    [AllowAnonymous]
+    private static async Task<IResult> GetSubjectsManualAmount(int id, ISubjectRepository repository)
+    {
+        return Results.Ok(await repository.GetSubjectsManualAmount(id));
     }
     
     [AllowAnonymous]

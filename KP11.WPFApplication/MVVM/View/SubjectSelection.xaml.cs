@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using KP11.WPFApplication.MVVM.Model;
+using KP11.WPFApplication.MVVM.ViewModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace KP11.WPFApplication.MVVM.View
 {
@@ -20,9 +9,30 @@ namespace KP11.WPFApplication.MVVM.View
     /// </summary>
     public partial class SubjectSelection : Page
     {
-        public SubjectSelection()
+        public ProfessorModel Professor { get; private set; }
+
+        public SubjectSelection(ProfessorModel professor)
         {
             InitializeComponent();
+
+            Professor = professor;
+            AppFields.LastSelectedProfessor = professor;
+            LabelProfessorName.Content = Professor.Name;
+
+            DataContext = new SubjectSelectionViewModel(professor);
+        }
+
+        private void ButtonBack_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            AppFields.MainWindow.Content = new ProfessorSelection();
+        }
+
+        private void ButtonSubject_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (sender is not Button button) return;
+            if (button.DataContext is not SubjectModel subject) return;
+
+            AppFields.MainWindow.Content = new ManualSelection(subject);
         }
     }
 }

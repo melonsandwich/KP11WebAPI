@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\arbuz\RiderProjects\KP11WebAPI\KP11.WPFApplication\App.xaml
-7740736947
+10863434731
 
-10-812332352
-200-1607158540
-MainWindow.xaml;MVVM\View\LoginPage.xaml;MVVM\View\MainPage.xaml;MVVM\View\ManualSelection.xaml;MVVM\View\ProfessorSelection.xaml;MVVM\View\RoleSelectionPage.xaml;MVVM\View\SubjectSelection.xaml;
+2419348498
+206-1680936864
+MainWindow.xaml;MVVM\View\Debug\BaseAddressDebugPage.xaml;MVVM\View\LoginPage.xaml;MVVM\View\MainPage.xaml;MVVM\View\ManualCreationPage.xaml;MVVM\View\ManualSelection.xaml;MVVM\View\ManualViewPage.xaml;MVVM\View\ProfessorSelection.xaml;MVVM\View\RoleSelectionPage.xaml;MVVM\View\SubjectSelection.xaml;
 
-True
+False
 

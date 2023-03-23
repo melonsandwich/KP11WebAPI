@@ -87,6 +87,13 @@ public static class API
             return JsonConvert.DeserializeObject<List<Subject>>(result) ?? throw new Exception("Unable to return a model!");
         }
         
+        public static async Task<int> GetSubjectsManualAmount(HttpClient client, int id)
+        {
+            string result = await GetAsync(client, $"/subjects/{id}/manual-amount");
+
+            return JsonConvert.DeserializeObject<SubjectManualAmountResponse>(result)?.Amount ?? throw new Exception("Unable to return a model!");
+        }
+        
         public static async Task<List<Subject>> GetAllOfProfessor(HttpClient client, Professor professor)
         {
             return await GetAllOfProfessor(client, professor.ID);

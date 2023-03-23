@@ -17,7 +17,8 @@
         <StackPanel Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Label Content="Жмышенко Валерий Альбертович" 
+            <Label Name="LabelProfessorName"
+                   Content="Жмышенко Валерий Альбертович" 
                    Style="{StaticResource LabelTitle}"/>
 
             <Label Content="Предметы"
@@ -27,132 +28,68 @@
                    Style="{StaticResource LabelTitle}"/>
         </StackPanel>
 
+        <Button Name="ButtonEditProfessors"
+                Content="Панель управления"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Width="120"
+                Margin="15"
+                Padding="5"
+                Tag="admin"/>
+        
+        <Button Name="ButtonBack"
+                Content="Назад"
+                Click="ButtonBack_Click"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="120"
+                Margin="15"
+                Padding="5"/>
+
         <Grid Grid.Row="1" 
               Margin="35">
             <Rectangle Fill="Black" Opacity="0.05"/>
             <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                           VerticalScrollBarVisibility="Auto">
                 <StackPanel Orientation="Vertical">
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Основы пилотирования гражданским авиационным транспортом"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Количество пособий"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="0"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Английский язык в авиационной сфере"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Количество пособий"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="0"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Основы средств телефонной и мобильной связи"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Количество пособий"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="0"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Разговоры о важном"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Количество пособий"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="0"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
-                    <Button Margin="5"
-                            HorizontalContentAlignment="Stretch">
-                        <Grid>
-                            <DockPanel>
-                                <StackPanel Orientation="Vertical"
-                                        DockPanel.Dock="Left"
-                                        HorizontalAlignment="Left">
-                                    <Label Style="{StaticResource LabelTitle}"
-                                           Content="Роберт"
-                                           FontSize="20"/>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               FontWeight="DemiBold"
-                                               Content="Количество пособий"
-                                               FontSize="15"/>
-                                        <Label Style="{StaticResource LabelTitle}"
-                                               Content="0"
-                                               FontSize="15"
-                                               FontWeight="Regular"/>
-                                    </StackPanel>
-                                </StackPanel>
-                            </DockPanel>
-                        </Grid>
-                    </Button>
+                    <ItemsControl ItemsSource="{Binding Subjects}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Name="ButtonSubject"
+                                        Click="ButtonSubject_Click"
+                                        Margin="5"
+                                        HorizontalContentAlignment="Stretch">
+                                    <Grid>
+                                        <TextBlock FontSize="10"
+                                                     VerticalAlignment="Top"
+                                                     HorizontalAlignment="Right">
+                                                <Run Text="ID: "/>
+                                                <Run Text="{Binding ID}"/>
+                                        </TextBlock>
+                                        <DockPanel>
+                                            <StackPanel Orientation="Vertical"
+                                                        DockPanel.Dock="Left"
+                                                        HorizontalAlignment="Left">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                       Content="{Binding Name}"
+                                                       FontSize="20"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                           FontWeight="DemiBold"
+                                                           Content="Количество пособий"
+                                                           FontSize="15"/>
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                           Content="{Binding ManualAmount}"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </DockPanel>
+                                    </Grid>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Net.NetworkInformation;
 using System.Text;
 using KP11.Integration;
 using KP11.Integration.Models;
