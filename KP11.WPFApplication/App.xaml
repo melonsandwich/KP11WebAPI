@@ -13,9 +13,23 @@
             <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
         </Style>
 
+        <Style x:Key="LabelTitleWhite" TargetType="Label">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
+        </Style>
+
         <Style x:Key="LabelText" TargetType="Label">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
+        </Style>
+
+        <Style x:Key="LabelTextWhite" TargetType="Label">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontFamily" Value="{StaticResource Manrope}"/>
         </Style>
     </Application.Resources>

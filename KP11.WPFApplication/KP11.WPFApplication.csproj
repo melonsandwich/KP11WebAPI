@@ -17,6 +17,13 @@
       <None Remove="Media\Font\Manrope\Manrope-SemiBold.ttf" />
       <None Remove="Media\Icon\back.png" />
       <None Remove="Media\Icon\edit.png" />
+      <None Remove="Media\Image\bg.png" />
+      <None Remove="Media\Image\Маскот 2-1.png" />
+      <None Remove="Media\Image\Маскот 2-2.png" />
+      <None Remove="Media\Image\Маскот 2-3.png" />
+      <None Remove="Media\Image\Маскот 3.png" />
+      <None Remove="Media\Image\Маскот в полный рост.png" />
+      <None Remove="Media\Image\Маскот для визитки.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -64,6 +71,27 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Media\Icon\edit.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\bg.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот 2-1.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот 2-2.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот 2-3.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот 3.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот в полный рост.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Image\Маскот для визитки.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>

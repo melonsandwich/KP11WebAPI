@@ -9,17 +9,27 @@
       Title="LoginPage">
 
     <Grid>
+        <Image Source="../../Media/Image/bg.png"
+               Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect Radius="15"/>
+            </Image.Effect>
+        </Image>
+
+        <Rectangle Fill="Black" Grid.RowSpan="1" Opacity="0.3"/>
+        
         <StackPanel Orientation="Vertical"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <Label Content="Вход в систему"
-                   Style="{StaticResource LabelTitle}"/>
+                   Style="{StaticResource LabelTitleWhite}"/>
             <Grid Height="150"
                   Margin="0,20,0,0">
-                <Rectangle Fill="Black" Opacity="0.05"/>
+                <Rectangle Fill="Black" Opacity="0.3"/>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Vertical">
                         <Label Content="Логин или e-mail"
+                               Foreground="White"
                                FontFamily="{StaticResource Manrope}"
                                FontSize="15"
                                Height="30"/>
@@ -35,6 +45,7 @@
                     <StackPanel Orientation="Vertical">
 
                         <Label Content="Пароль"
+                               Foreground="White"
                                FontFamily="{StaticResource Manrope}"
                                FontSize="15"
                                Height="30"/>

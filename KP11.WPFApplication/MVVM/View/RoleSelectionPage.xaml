@@ -14,14 +14,23 @@
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
+        <Image Source="../../Media/Image/bg.png"
+               Grid.RowSpan="2"
+               Stretch="UniformToFill">
+            <Image.Effect>
+                <BlurEffect Radius="15"/>
+            </Image.Effect>
+        </Image>
+
+        <Rectangle Fill="Black" Grid.RowSpan="1" Opacity="0.3"/>
         <StackPanel Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
             <Label Content="Чтобы продолжить, укажите," 
-                   Style="{StaticResource LabelTitle}"/>
+                   Style="{StaticResource LabelTitleWhite}"/>
             <Label Content="кем вы являетесь"
                    HorizontalAlignment="Center"
-                   Style="{StaticResource LabelTitle}"/>
+                   Style="{StaticResource LabelTitleWhite}"/>
         </StackPanel>
 
         <Grid Grid.Row="1"
@@ -40,7 +49,7 @@
             <Rectangle Fill="Black"
                        Grid.ColumnSpan="3"
                        Grid.RowSpan="2"
-                       Opacity="0.05"/>
+                       Opacity="0.3"/>
 
             <Button Name="ButtonStudent"
                     Click="ButtonStudent_Click"
@@ -57,7 +66,8 @@
                         Grid.Column="1">
                 <Image Name="ImageSelection"
                        Height="200"
-                       Width="200"/>
+                       Width="200"
+                       Source="../../Media/Image/Маскот 2-3.png"/>
 
                 <Label Name="LabelRole"
                        Content=""
