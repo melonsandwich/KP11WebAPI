@@ -1,0 +1,98 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.ManualCreationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KP11.WPFApplication.MVVM.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ManualCreationPage">
+
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.75" Panel.ZIndex="0"/>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <Label Style="{StaticResource LabelTitle}"
+                   Content="Создание пособия"
+                   Foreground="White"
+                   HorizontalAlignment="Center"/>
+            <Grid Margin="0,20,0,0"
+                  MinWidth="400">
+                <Rectangle Fill="DarkGray" Opacity="1"/>
+                <StackPanel Orientation="Vertical">
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Название"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxManualName"
+                                 TextChanged="TextBox_TextChanged"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+
+                        <Label Content="Ссылка на материал"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxManualContentLink"
+                                 TextChanged="TextBox_TextChanged"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+
+                        <Label Content="Все поля должны быть заполнены!"
+                               Name="LabelFieldEmptyWarning"
+                               FontFamily="{StaticResource Manrope}"
+                               FontWeight="Bold"
+                               FontSize="10"
+                               Height="30"
+                               HorizontalAlignment="Center"
+                               VerticalContentAlignment="Bottom"
+                               Foreground="Red"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Закрыть"
+                        Name="ButtonClose"
+                        Click="ButtonClose_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="#777777"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="0"/>
+
+                <Button Content="Создать"
+                        Name="ButtonCreate"
+                        Click="ButtonCreate_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="LimeGreen"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="1"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net;
+using System.Text;
 using KP11.Integration.Models;
 using Newtonsoft.Json;
 
@@ -10,8 +11,22 @@ public static class API
     {
         public static async Task<string> Authorize(HttpClient client, string login, string password)
         {
-            string result = await GetAsync(client, $"/auth?login={login}&password={password}");
+            string result = string.Empty;
+            try
+            {
+                result = await GetAsync(client, $"/auth?login={login}&password={password}");
+            }
+            catch (HttpRequestException e)
+            {
+                if (e.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    return string.Empty;
+                }
+            }
 
+            string token = result.Substring(1, result.Length - 1);
+            result = token.Remove(token.Length - 1, 1);
+            
             return result ?? throw new Exception("Authorization unsuccessful!");
         }
     }
@@ -51,11 +66,9 @@ public static class API
             return JsonConvert.DeserializeObject<Manual>(result) ?? throw new Exception("Unable to return a model!");
         }
         
-        public static async Task<Manual> Update(HttpClient client, Manual manual)
+        public static async Task Update(HttpClient client, Manual manual)
         {
-            string result = await PutAsync(client, "/manuals/update", JsonConvert.SerializeObject(manual));
-
-            return JsonConvert.DeserializeObject<Manual>(result) ?? throw new Exception("Unable to return a model!");
+            await PutAsync(client, "/manuals/update", JsonConvert.SerializeObject(manual));
         }
         
         public static async Task Delete(HttpClient client, int id)
@@ -104,6 +117,11 @@ public static class API
             string result = await PostAsync(client, "/subjects/add", JsonConvert.SerializeObject(subject));
 
             return JsonConvert.DeserializeObject<Subject>(result) ?? throw new Exception("Unable to return a model!");
+        }
+
+        public static async Task Update(HttpClient client, Subject subject)
+        {
+            await PutAsync(client, "/subjects/update", JsonConvert.SerializeObject(subject));
         }
         
         public static async Task Delete(HttpClient client, int id)
@@ -159,45 +177,33 @@ public static class API
 
     public static async Task<string> PostAsync(HttpClient client, string url, string body)
     {
-        string content = string.Empty;
-
+        using HttpRequestMessage request = new(HttpMethod.Post, client.BaseAddress + url);
         StringContent bodyContent = new(body, Encoding.UTF8, "application/json");
         bodyContent.Headers.ContentType = new("application/json");
         
         HttpResponseMessage response = await client.PostAsync(url, bodyContent);
-        if (response.IsSuccessStatusCode)
-        {
-            content = await response.Content.ReadAsStringAsync();
-        }
-
-        return content;
+        response.EnsureSuccessStatusCode();
+        
+        return await response.Content.ReadAsStringAsync();
     }
     
     public static async Task<string> PutAsync(HttpClient client, string url, string body)
     {
-        string content = string.Empty;
-
+        using HttpRequestMessage requestMessage = new(HttpMethod.Put, client.BaseAddress + url);
         StringContent bodyContent = new(body, Encoding.UTF8, "application/json");
         HttpResponseMessage response = await client.PutAsync(url, bodyContent);
-        if (response.IsSuccessStatusCode)
-        {
-            content = await response.Content.ReadAsStringAsync();
-        }
+        response.EnsureSuccessStatusCode();
 
-        return content;
+        return await response.Content.ReadAsStringAsync();
     }
     
     public static async Task<string> DeleteAsync(HttpClient client, string url)
     {
-        string content = string.Empty;
-
+        using HttpRequestMessage request = new(HttpMethod.Delete, client.BaseAddress + url);
         HttpResponseMessage response = await client.DeleteAsync(url);
-        if (response.IsSuccessStatusCode)
-        {
-            content = await response.Content.ReadAsStringAsync();
-        }
-
-        return content;
+        response.EnsureSuccessStatusCode();
+        
+        return await response.Content.ReadAsStringAsync();
     }
 
     private static HttpRequestMessage ProcessRequestHeaders(HttpMethod method, string url)

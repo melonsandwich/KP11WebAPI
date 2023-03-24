@@ -7,7 +7,7 @@ namespace KP11WebAPI.Auth;
 
 public class TokenService : ITokenService
 {
-    private TimeSpan ExpireDuration = new(0, 30, 0);
+    private TimeSpan ExpireDuration = new(24, 0, 0);
     public string BuildToken(string key, string issuer, UserDto user)
     {
         Claim[] claims =

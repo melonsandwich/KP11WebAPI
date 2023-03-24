@@ -33,12 +33,12 @@ public class ManualAPI : IAPI
             .Accepts<Manual>("application/json")
             .Produces<Manual>(StatusCodes.Status201Created)
             .WithName("CreateManual")
-            .WithName("POST");
+            .WithTags("POST");
 
         app.MapPut("/manuals/update", UpdateManual)
             .Accepts<Manual>("application/json")
             .WithName("UpdateManual")
-            .WithName("PUT");
+            .WithTags("PUT");
 
         app.MapDelete("/manuals/delete/{id:int}", DeleteManual)
             .WithName("DeleteManual")

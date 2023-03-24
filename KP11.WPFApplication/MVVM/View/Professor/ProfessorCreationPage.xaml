@@ -1,0 +1,189 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.ProfessorCreationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1500"
+      Title="ProfessorCreationPage">
+
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.75" Panel.ZIndex="0"/>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <Label Style="{StaticResource LabelTitle}"
+                   Content="Добавить преподавателя"
+                   Foreground="White"
+                   HorizontalAlignment="Center"/>
+            <Grid Margin="0,20,0,0"
+                  MinWidth="800">
+                <Rectangle Fill="DarkGray" Opacity="1"/>
+                
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="ФИО преподавателя (обязательно)"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorName"
+                                 TextChanged="TextBoxProfessorName_TextChanged"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Занимаемые должности"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorOccupation"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Оконченное учебное заведение"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorAlmaMater"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Направления подготовки и (или) специальности"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorSpeciality"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Общий стаж работы"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorWorkExperience"
+                                 PreviewTextInput="NumberValidationTextBox"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Стаж работы по специальности"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorSpecialWorkExperience"
+                                 PreviewTextInput="NumberValidationTextBox"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="E-mail"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorEmail"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Телефон"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorPhone"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="URL фотографии преподавателя"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxProfessorImageURL"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Обязательные поля не могут быть пустыми!"
+                               Name="LabelFieldEmptyWarning"
+                               FontFamily="{StaticResource Manrope}"
+                               FontWeight="Bold"
+                               FontSize="10"
+                               Height="30"
+                               HorizontalAlignment="Center"
+                               VerticalContentAlignment="Bottom"
+                               Foreground="Red"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Закрыть"
+                        Name="ButtonClose"
+                        Click="ButtonClose_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="#777777"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="0"/>
+
+                <Button Content="Создать"
+                        Name="ButtonCreate"
+                        Click="ButtonCreate_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="LimeGreen"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="1"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

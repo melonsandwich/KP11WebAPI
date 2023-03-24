@@ -16,11 +16,17 @@ public class KP11Client : IClient
         InitClient();
     }
     
-    public async Task Authorize(ClientAuthConfiguration config)
+    public async Task<bool> Authorize(ClientAuthConfiguration config)
     {
         string token = await API.Auth.Authorize(HttpClient, config.Login, config.Password);
+        if (string.IsNullOrEmpty(token))
+            return false;
+        
         Token = token;
         HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        Console.WriteLine("token: " + token);
+        Console.WriteLine("httpclient bearer token: " + HttpClient.DefaultRequestHeaders.Authorization);
+        return true;
     }
 
     public async Task<string> GetAsync(string url)

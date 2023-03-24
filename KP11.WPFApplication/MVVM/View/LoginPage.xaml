@@ -46,25 +46,28 @@
                                  FontFamily="{StaticResource Manrope}"/>
 
                         <Label Content="Неверный логин или пароль!"
+                               Name="LabelWarning"
                                FontFamily="{StaticResource Manrope}"
                                FontWeight="Bold"
                                FontSize="10"
                                Height="30"
                                HorizontalAlignment="Center"
                                VerticalContentAlignment="Bottom"
-                               Foreground="Red"/>
+                               Foreground="Red"
+                               Visibility="Hidden"/>
 
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Button Content="Войти"
-                    Name="ButtonLogin"
+                    x:Name="ButtonLogin"
                     Height="30"
                     BorderThickness="0"
                     Background="#777777"
                     Foreground="White"
                     FontFamily="{StaticResource Manrope}"
-                    FontWeight="DemiBold"/>
+                    FontWeight="DemiBold" 
+                    Click="ButtonLogin_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -1,0 +1,99 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.SubjectEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:model="clr-namespace:KP11.WPFApplication.MVVM.Model" d:DataContext="{d:DesignInstance Type=model:SubjectModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SubjectEditPage">
+
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.75" Panel.ZIndex="0"/>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <Label Style="{StaticResource LabelTitle}"
+                   Content="Редактирование предмета"
+                   Foreground="White"
+                   HorizontalAlignment="Center"/>
+            <Grid Margin="0,20,0,0"
+                  MinWidth="400">
+                <Rectangle Fill="DarkGray" Opacity="1"/>
+                <StackPanel Orientation="Vertical">
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Название"
+                               FontFamily="{StaticResource Manrope}"
+                               FontSize="15"
+                               Height="30"/>
+
+                        <TextBox Name="TextBoxSubjectName"
+                                 Text="{Binding Name}"
+                                 TextChanged="TextBoxSubjectName_TextChanged"
+                                 Height="30"
+                                 BorderThickness="0"
+                                 Background="LightGray"
+                                 FontFamily="{StaticResource Manrope}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+
+                        <Label Content="Все поля должны быть заполнены!"
+                               Name="LabelFieldEmptyWarning"
+                               FontFamily="{StaticResource Manrope}"
+                               FontWeight="Bold"
+                               FontSize="10"
+                               Height="30"
+                               HorizontalAlignment="Center"
+                               VerticalContentAlignment="Bottom"
+                               Foreground="Red"
+                               Visibility="Hidden"/>
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Content="Закрыть"
+                        Name="ButtonClose"
+                        Click="ButtonClose_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="#777777"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="0"/>
+
+                <Button Content="Удалить"
+                        Name="ButtonDelete"
+                        Click="ButtonDelete_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="Red"
+                        Foreground="White"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="1"/>
+
+                <Button Content="Сохранить"
+                        Name="ButtonSave"
+                        Click="ButtonSave_Click"
+                        Height="30"
+                        BorderThickness="0"
+                        Background="Yellow"
+                        Foreground="Black"
+                        FontFamily="{StaticResource Manrope}"
+                        FontWeight="DemiBold"
+                        Grid.Column="2"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>

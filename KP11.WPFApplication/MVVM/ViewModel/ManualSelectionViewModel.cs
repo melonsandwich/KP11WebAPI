@@ -3,11 +3,14 @@ using KP11.Integration;
 using KP11.WPFApplication.MVVM.Model;
 using System.Collections.ObjectModel;
 using KP11.WPFApplication.Extensions;
+using System;
 
 namespace KP11.WPFApplication.MVVM.ViewModel
 {
     public class ManualSelectionViewModel
     {
+        public event Action? FinishedPopulating;
+
         public ObservableCollection<ManualModel> Manuals { get; }
 
         public SubjectModel Subject { get; }
@@ -25,6 +28,13 @@ namespace KP11.WPFApplication.MVVM.ViewModel
             {
                 Manuals.Add(manual.ConvertToWPFModel());
             }
+            FinishedPopulating?.Invoke();
+        }
+
+        public void Update()
+        {
+            Manuals.Clear();
+            PopulateItems();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public string ImageURL
+        public string? ImageURL
         {
             get => _imageURL;
             set
@@ -35,7 +35,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public string Occupation
+        public string? Occupation
         {
             get => _occupation;
             set
@@ -45,7 +45,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public string AlmaMater
+        public string? AlmaMater
         {
             get => _almaMater;
             set
@@ -55,7 +55,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public string Speciality
+        public string? Speciality
         {
             get => _speciality;
             set
@@ -65,7 +65,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public int WorkExperience
+        public int? WorkExperience
         {
             get => _workExperience;
             set
@@ -75,7 +75,7 @@ namespace KP11.WPFApplication.MVVM.Model
             }
         }
 
-        public int SpecialWorkExperience
+        public int? SpecialWorkExperience
         {
             get => _specialWorkExperience;
             set
@@ -106,13 +106,13 @@ namespace KP11.WPFApplication.MVVM.Model
         }
 
         private int _id;
-        private string _name;
-        private string _imageURL;
-        private string _occupation;
-        private string _almaMater;
-        private string _speciality;
-        private int _workExperience;
-        private int _specialWorkExperience;
+        private string? _name;
+        private string? _imageURL;
+        private string? _occupation;
+        private string? _almaMater;
+        private string? _speciality;
+        private int? _workExperience;
+        private int? _specialWorkExperience;
         private string? _email;
         private string? _phone;
 

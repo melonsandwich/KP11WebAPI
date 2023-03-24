@@ -21,27 +21,27 @@ public class Professor
     /// <summary>
     /// Занимаемые должности
     /// </summary>
-    public string Occupation { get; set; }
+    public string? Occupation { get; set; }
     
     /// <summary>
     /// Оконченное учебное заведение
     /// </summary>
-    public string AlmaMater { get; set; }
+    public string? AlmaMater { get; set; }
     
     /// <summary>
     /// Специальности
     /// </summary>
-    public string Speciality { get; set; }
+    public string? Speciality { get; set; }
     
     /// <summary>
     /// Общий стаж работы
     /// </summary>
-    public int WorkExperience { get; set; }
+    public int? WorkExperience { get; set; }
     
     /// <summary>
     /// Стаж работы по специальности
     /// </summary>
-    public int SpecialWorkExperience { get; set; }
+    public int? SpecialWorkExperience { get; set; }
     
     /// <summary>
     /// E-mail

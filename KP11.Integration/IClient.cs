@@ -4,5 +4,5 @@ namespace KP11.Integration;
 
 public interface IClient
 {
-    Task Authorize(ClientAuthConfiguration config);
+    Task<bool> Authorize(ClientAuthConfiguration config);
 }

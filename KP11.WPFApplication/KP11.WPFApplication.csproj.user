@@ -8,22 +8,37 @@
     <Compile Update="MVVM\View\LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\ManualCreationPage.xaml.cs">
+    <Compile Update="MVVM\View\Manual\ManualCreationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\ManualSelection.xaml.cs">
+    <Compile Update="MVVM\View\Manual\ManualEditPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\ManualViewPage.xaml.cs">
+    <Compile Update="MVVM\View\Manual\ManualSelection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\ProfessorSelection.xaml.cs">
+    <Compile Update="MVVM\View\Manual\ManualViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Professor\ProfessorCreationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Professor\ProfessorEditPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Professor\ProfessorSelection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\View\RoleSelectionPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\View\SubjectSelection.xaml.cs">
+    <Compile Update="MVVM\View\Subject\SubjectCreationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Subject\SubjectEditPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Subject\SubjectSelection.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -34,22 +49,37 @@
     <Page Update="MVVM\View\LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\ManualCreationPage.xaml">
+    <Page Update="MVVM\View\Manual\ManualCreationPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\ManualSelection.xaml">
+    <Page Update="MVVM\View\Manual\ManualEditPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\ManualViewPage.xaml">
+    <Page Update="MVVM\View\Manual\ManualSelection.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\ProfessorSelection.xaml">
+    <Page Update="MVVM\View\Manual\ManualViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Professor\ProfessorCreationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Professor\ProfessorEditPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Professor\ProfessorSelection.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\View\RoleSelectionPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\View\SubjectSelection.xaml">
+    <Page Update="MVVM\View\Subject\SubjectCreationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Subject\SubjectEditPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Subject\SubjectSelection.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

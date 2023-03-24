@@ -15,6 +15,8 @@
       <None Remove="Media\Font\Manrope\Manrope-Medium.ttf" />
       <None Remove="Media\Font\Manrope\Manrope-Regular.ttf" />
       <None Remove="Media\Font\Manrope\Manrope-SemiBold.ttf" />
+      <None Remove="Media\Icon\back.png" />
+      <None Remove="Media\Icon\edit.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -56,6 +58,12 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
       <Resource Include="Media\Font\Manrope\Manrope-SemiBold.ttf">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Icon\back.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
+      <Resource Include="Media\Icon\edit.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>

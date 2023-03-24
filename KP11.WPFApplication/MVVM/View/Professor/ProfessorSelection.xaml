@@ -1,0 +1,203 @@
+﻿<Page x:Class="KP11.WPFApplication.MVVM.View.ProfessorSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KP11.WPFApplication.MVVM.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="ProfessorSelection">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Frame Name="FrameProfessor"
+               NavigationUIVisibility="Hidden"
+               Grid.RowSpan="2"
+               Panel.ZIndex="50"/>
+
+        <StackPanel Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Преподаватели" 
+                   Style="{StaticResource LabelTitle}"/>
+
+        </StackPanel>
+
+        <Button Name="ButtonAddProfessor"
+                Click="ButtonAddProfessor_Click"
+                Content="Добавить"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Width="120"
+                Margin="15"
+                Padding="5"
+                Tag="admin"/>
+
+        <Button Name="ButtonBack"
+                Content="Назад"
+                Click="ButtonBack_Click"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left"
+                Width="120"
+                Margin="15"
+                Padding="5"/>
+
+        <Grid Grid.Row="1" 
+              Margin="35">
+            <Rectangle Fill="Black" Opacity="0.05"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                          VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Professors}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="15*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button Margin="5"
+                                        Grid.Column="0"
+                                    HorizontalContentAlignment="Stretch"
+                                    Name="ButtonProfessor"
+                                    Click="ButtonProfessor_Click">
+                                    <Grid>
+                                        <TextBlock FontSize="10"
+                                               VerticalAlignment="Top"
+                                               HorizontalAlignment="Right">
+                                        <Run Text="ID: "/>
+                                        <Run Text="{Binding ID}"/>
+                                        </TextBlock>
+                                        <DockPanel>
+                                            <StackPanel Orientation="Vertical"
+                                                    DockPanel.Dock="Left"
+                                                    HorizontalAlignment="Left">
+                                                <Label Style="{StaticResource LabelTitle}"
+                                                   Content="{Binding Name}"
+                                                   FontSize="20"/>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Занимаемые должности"
+                                                       FontSize="15"/>
+                                                    <TextBlock Text="{Binding Occupation}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Оконченное учебное заведение"
+                                                       FontSize="15"/>
+                                                    <TextBlock Text="{Binding AlmaMater}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Направления подготовки и (или) специальности"
+                                                       FontSize="15"/>
+                                                    <TextBlock Text="{Binding Speciality}"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Общий стаж работы"
+                                                       FontSize="15"/>
+                                                    <TextBlock Text="{Binding WorkExperience}"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Стаж работы по специальности"
+                                                       FontSize="15"/>
+                                                    <TextBlock Text="{Binding SpecialWorkExperience}"
+                                                           FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="E-mail"
+                                                       FontSize="15"/>
+                                                    <TextBlock FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center">
+                                                    <Hyperlink Foreground="#8a85c7"
+                                                               Name="HyperlinkEmail"
+                                                               Click="HyperlinkEmail_Click">
+                                                        <Run Text="{Binding Email}"/>
+                                                    </Hyperlink>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Style="{StaticResource LabelTitle}"
+                                                       FontWeight="DemiBold"
+                                                       Content="Телефон"
+                                                       FontSize="15"/>
+                                                    <TextBlock FontSize="15"
+                                                           FontWeight="Regular"
+                                                           FontFamily="{StaticResource Manrope}"
+                                                           VerticalAlignment="Center">
+                                                    <Hyperlink Name="HyperlinkPhone" 
+                                                               Foreground="#8a85c7"
+                                                               Click="HyperlinkPhone_Click">
+                                                        <Run Text="{Binding Phone}"/>
+                                                    </Hyperlink>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <Image Source="{Binding ImageURL}"
+                                               Width="200"
+                                               Height="200"
+                                               Stretch="Uniform"
+                                               HorizontalAlignment="Right"
+                                               DockPanel.Dock="Right"/>
+                                        </DockPanel>
+                                    </Grid>
+                                </Button>
+                                <StackPanel Grid.Column="1"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center">
+                                    <Button Name="ButtonEdit"
+                                            Click="ButtonEdit_Click"
+                                            Initialized="ButtonEdit_Initialized"
+                                            HorizontalContentAlignment="Center"
+                                            VerticalContentAlignment="Center"
+                                            Margin="5">
+                                        <Image Source="../../../Media/Icon/edit.png"
+                                                   Height="50"
+                                                   Width="50"/>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

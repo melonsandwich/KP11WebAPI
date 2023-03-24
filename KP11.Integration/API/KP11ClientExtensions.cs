@@ -29,9 +29,9 @@ public static class KP11ClientExtensions
         return await API.Manuals.Add(client.HttpClient, manual);
     }
     
-    public static async Task<Manual> Manuals_Update(this KP11Client client, Manual manual)
+    public static async Task Manuals_Update(this KP11Client client, Manual manual)
     {
-        return await API.Manuals.Update(client.HttpClient, manual);
+        await API.Manuals.Update(client.HttpClient, manual);
     }
     
     public static async Task Manuals_Delete(this KP11Client client, int id)

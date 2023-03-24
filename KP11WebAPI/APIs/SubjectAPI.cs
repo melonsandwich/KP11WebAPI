@@ -34,7 +34,12 @@ public class SubjectAPI : IAPI
             .WithName("CreateSubject")
             .WithTags("POST");
 
-        app.MapDelete("/manuals/delete/{id:int}", DeleteSubject)
+        app.MapPut("/subjects/update", UpdateSubject)
+            .Accepts<Subject>("application/json")
+            .WithName("UpdateSubject")
+            .WithTags("PUT");
+
+        app.MapDelete("/subjects/delete/{id:int}", DeleteSubject)
             .WithName("DeleteSubject")
             .WithTags("DELETE");
     }
@@ -73,6 +78,14 @@ public class SubjectAPI : IAPI
         await repository.AddSubjectAsync(subject);
         await repository.SaveAsync();
         return Results.Created($"/subjects/{subject.ID}", subject);
+    }
+
+    [Authorize]
+    private static async Task<IResult> UpdateSubject([FromBody] Subject subject, ISubjectRepository repository)
+    {
+        await repository.UpdateSubjectAsync(subject);
+        await repository.SaveAsync();
+        return Results.NoContent();
     }
     
     [Authorize]
